@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour {
  
 
     void Update () {
-        transform.position += Time.deltaTime * 4.0f * transform.forward;	
+        transform.position += Time.deltaTime * 4.0f * transform.right;	
 	}
 }
     

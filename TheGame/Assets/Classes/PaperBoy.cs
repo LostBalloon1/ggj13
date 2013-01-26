@@ -30,7 +30,7 @@ public class PaperBoy : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject.Instantiate(prefab, transform.position + 1.0f * transform.forward, transform.rotation);
+            GameObject.Instantiate(prefab, transform.position + 1.0f * transform.right, transform.rotation);
           
 
         }
