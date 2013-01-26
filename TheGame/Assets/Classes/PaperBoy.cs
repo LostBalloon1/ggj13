@@ -49,13 +49,13 @@ public class PaperBoy : MonoBehaviour {
 
         if (Input.GetAxis("Vertical") > deadZone || Input.GetAxis("Vertical") < -deadZone)
 
-            MovEngine.Instance.MoveVector += new Vector3(0, 0, Input.GetAxis("Vertical"));
+            MovEngine.Instance.MoveVector += new Vector3(0, Input.GetAxis("Vertical"), 0);
 
         
 
         if (Input.GetAxis("Horizontal") > deadZone || Input.GetAxis("Horizontal") < -deadZone)
 
-        MovEngine.Instance.MoveVector += new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+            MovEngine.Instance.MoveVector += new Vector3( Input.GetAxis("Horizontal"), 0,0);
 
     }   
 
