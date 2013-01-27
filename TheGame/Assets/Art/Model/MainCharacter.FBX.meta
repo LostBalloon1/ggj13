@@ -35,6 +35,7 @@ ModelImporter:
     7400000: IDLE
     7400002: Throw
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Box001
   materials:
     importMaterials: 1
@@ -43,11 +44,11 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
-    animationWrapMode: 0
+    animationWrapMode: 2
     clipAnimations:
     - name: IDLE
       takeName: Take 001
@@ -128,5 +129,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   additionalBone: 1
-  animationType: 2
+  animationType: 1
   userData: 
