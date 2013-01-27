@@ -12,7 +12,14 @@ public class PaperBoy : MonoBehaviour {
      public int nbProjectil = 5;
      public int projectilShot;
      public int angle = 45;
+     public int ressourceAvailable;
+     private Ressource ressource;
 
+     void Start()
+     {
+         ressource = (Ressource)FindObjectOfType(typeof(Ressource)) as Ressource;
+     }
+    
     void Awake() 
     {
 
@@ -78,9 +85,14 @@ public class PaperBoy : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0))
         {
+            ressourceAvailable = ressource.getRessource();
+            if (ressourceAvailable > 0)
+            {
+                GameObject.Instantiate(Projectil, transform.position + 2.0f * Input.GetAxis("Horizontal") * transform.right, transform.rotation);
+                animation.Play("Throw");
+                ressource.spendRessource(1);
 
-            GameObject.Instantiate(Projectil, transform.position + 2.0f * Input.GetAxis("Horizontal") * transform.right, transform.rotation);
-            animation.Play ("Throw");
+            }
           
               
         }
