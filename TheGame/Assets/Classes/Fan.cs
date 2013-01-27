@@ -105,13 +105,12 @@ public class Fan : MonoBehaviour {
 	}
 		
 	
-	protected void attackEnemies(GameObject enemy){
+	protected virtual void attackEnemies(GameObject enemy){
 		Life damage = enemy.GetComponent<Life>();
 		if(damage != null)
 		{
 			damage.takeDamage(powerAttack);
 		}
-
 	}
 	
 	protected virtual void activatedAnim(){
