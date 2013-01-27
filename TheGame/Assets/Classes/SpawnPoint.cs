@@ -24,7 +24,7 @@ public class SpawnPoint : MonoBehaviour {
         {
             for (int j = 0; j < myArray[i].Count; j++)
             {
-                Instantiate(myArray[listindex][index], transform.position, Quaternion.identity);
+                Instantiate(myArray[listindex][index], transform.position, transform.rotation);
                 yield return new WaitForSeconds(0.5f);
             }
             yield return new WaitForSeconds(waveIntervalInSeconds);
