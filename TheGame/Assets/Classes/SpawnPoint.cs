@@ -41,6 +41,23 @@ public class SpawnPoint : MonoBehaviour {
         list1.Add(prefabs[0]);
         list1.Add(prefabs[0]);
         list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
+		list1.Add(prefabs[0]);
         myArray.Add(list1);
 
         List<GameObject> list2 = new List<GameObject>();
