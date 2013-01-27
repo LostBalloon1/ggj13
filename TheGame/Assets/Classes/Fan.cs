@@ -7,7 +7,7 @@ public class Fan : MonoBehaviour {
 	
 	
 	// Use this for initialization
-	void Start () {
+	protected void Start () {
 		ready = true;
 		activated = false;
 		position.x = gameObject.transform.up.x;
@@ -17,7 +17,7 @@ public class Fan : MonoBehaviour {
 	
 	
 	// Update is called once per frame
-	void Update () {
+	protected void Update () {
 		now = Time.realtimeSinceStartup;
 		
 		//if fan life is depleted
@@ -46,7 +46,7 @@ public class Fan : MonoBehaviour {
 	}
 	
 	// Add colliding object to the list, and start fan
-	void OnTriggerEnter(Collider other) {
+	protected void OnTriggerEnter(Collider other) {
 		if(other.rigidbody && ready){
 		
 			if(!activated){
@@ -58,7 +58,7 @@ public class Fan : MonoBehaviour {
 	}
 	
 	//apply force do colliding object
-	void OnTriggerStay(Collider other) {
+	protected void OnTriggerStay(Collider other) {
 		if(other.rigidbody && ready){
 			if(!activated){
 				activated = true;
@@ -76,13 +76,13 @@ public class Fan : MonoBehaviour {
     }
 	
 	//deactivates the fan
-	void deactivateFan(){
+	protected void deactivateFan(){
 		activated = false;			
 		lastRegen = Time.realtimeSinceStartup;
 	}
 		
 	
-	void attackEnemies(GameObject enemy){
+	protected void attackEnemies(GameObject enemy){
 		Life damage = enemy.GetComponent<Life>();
 		if(damage != null)
 		{
@@ -92,23 +92,23 @@ public class Fan : MonoBehaviour {
 	}
 	
 	//force objects
-	void fanObjects(Collider other){
+	protected virtual void fanObjects(Collider other){
    		other.rigidbody.AddForce(position * force);
 	}
 	
 	//variables
-	private float lastAttack;
-	private float lastRegen;
-	private List<GameObject> enemies;
-	private float now;
-	Vector3 position;
-	int lifeForce = 10;
-	bool activated;
-	bool ready;
+	protected float lastAttack;
+	protected float lastRegen;
+	protected List<GameObject> enemies;
+	protected float now;
+	protected Vector3 position;
+	protected int lifeForce = 10;
+	protected bool activated;
+	protected bool ready;
 	
 	//constants 
-	private const int force = 20;
-	private const int powerAttack = 2;
-	private const float updateInterval = 0.5F;
-	private const float restInterval = 1.0F;
+	protected const int force = 20;
+	protected const int powerAttack = 2;
+	protected const float updateInterval = 0.5F;
+	protected const float restInterval = 1.0F;
 }
