@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Life : MonoBehaviour {
 
-    public int hp = 10;
+    public int hp = 50;
 
 	// Use this for initialization
 	void Start () {
-	
+		Debug.Log("HP:" + hp);
 	}
 	
 	// Update is called once per frame
@@ -17,11 +17,11 @@ public class Life : MonoBehaviour {
 
     public void takeDamage(int amount)
     {
-        hp -= amount;
-
+		Debug.Log("HP:" + hp);
+		hp -= amount;
         if (hp <= 0)
         {
-            //kill me -> look into the function Destroy
+			Destroy(this.gameObject);//kill me -> look into the function Destroy
         }
     }
 }
