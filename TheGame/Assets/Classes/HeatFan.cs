@@ -1,15 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class SuckFan : Fan {
+public class HeatFan : Fan {
 
 	// Use this for initialization
 	void Start () {
-		ready = true;
-		activated = false;
-		position.x = -gameObject.transform.up.x;
-		position.y = -gameObject.transform.up.y;
-		position.z = 0;	
+		base.Start();
 	}
 	
 	// Update is called once per frame
@@ -17,4 +13,6 @@ public class SuckFan : Fan {
 		base.Update();
 	}
 	
+	protected override void fanObjects (Collider other)	{
+	}
 }
