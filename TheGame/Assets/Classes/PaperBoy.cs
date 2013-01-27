@@ -80,7 +80,7 @@ public class PaperBoy : MonoBehaviour {
         {
 
             GameObject.Instantiate(Projectil, transform.position + 2.0f * Input.GetAxis("Horizontal") * transform.right, transform.rotation);
-            
+            animation.Play ("Throw");
           
               
         }
