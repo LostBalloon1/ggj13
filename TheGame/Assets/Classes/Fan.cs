@@ -25,7 +25,7 @@ public class Fan : MonoBehaviour {
 		{
 			ready = false;
 			deactivateFan();
-			Debug.Log("Fan Disabled" + lifeForce);
+			//Debug.Log("Fan Disabled" + lifeForce);
 		}
 		
 		// if fan is empty and regenerating
@@ -35,7 +35,7 @@ public class Fan : MonoBehaviour {
 			if(lifeForce >= 10){
 				ready = true;
 				activated = false;
-				Debug.Log("Fan Enabled");
+				//Debug.Log("Fan Enabled");
 			}
 			lastRegen = Time.realtimeSinceStartup;
 		}
@@ -99,7 +99,6 @@ public class Fan : MonoBehaviour {
 	//variables
 	protected float lastAttack;
 	protected float lastRegen;
-	protected List<GameObject> enemies;
 	protected float now;
 	protected Vector3 position;
 	protected int lifeForce = 10;
@@ -107,7 +106,7 @@ public class Fan : MonoBehaviour {
 	protected bool ready;
 	
 	//constants 
-	protected const int force = 20;
+	protected const int force = 2;
 	protected const int powerAttack = 2;
 	protected const float updateInterval = 0.5F;
 	protected const float restInterval = 1.0F;
