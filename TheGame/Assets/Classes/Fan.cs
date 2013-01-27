@@ -101,7 +101,7 @@ public class Fan : MonoBehaviour {
 	}
 	
 	protected virtual void stopAnim(){
-		target.animation.Stop("Wind");
+		animation.Stop("Wind");
 	}
 	
 	//force objects
@@ -111,7 +111,6 @@ public class Fan : MonoBehaviour {
 	
 	//variables
 	protected GameObject target;
-	protected Animation animation;
 	protected float lastAttack;
 	protected float lastRegen;
 	protected float now;
