@@ -7,13 +7,17 @@ ModelImporter:
     100002: Mob1_Root
     100004: Mob1_Root_Nub
     100006: //RootNode
+    100008: Mob1_0
     400000: Line001
     400002: Mob1_Root
     400004: Mob1_Root_Nub
     400006: //RootNode
+    400008: Mob1_0
     4300000: Line001
+    4300002: Mob1_0
     9500000: //RootNode
     13700000: Line001
+    13700002: Mob1_0
   materials:
     importMaterials: 1
     materialName: 0
