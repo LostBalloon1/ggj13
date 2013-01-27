@@ -15,14 +15,11 @@ public class MovEngine : MonoBehaviour {
     {
         Instance = this;
     }
-
-
-
-
+    
 
     public void UpdateMov()
     {
-        SnapAlignCharacterwithCamera();
+       SnapAlignCharacterwithCamera();
         ProcessMov();
     }
 
@@ -40,7 +37,7 @@ public class MovEngine : MonoBehaviour {
         MoveVector *= Time.deltaTime;
 
         PaperBoy.CharacterController.Move(MoveVector);
-
+       
     }
 
 
