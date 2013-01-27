@@ -37,43 +37,31 @@ public class SpawnPoint : MonoBehaviour {
         List<GameObject> list1 = new List<GameObject>();
         list1.Add(prefabs[0]);
         list1.Add(prefabs[0]);
-        list1.Add(prefabs[0]);
-        list1.Add(prefabs[0]);
-        list1.Add(prefabs[0]);
-        list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
-		list1.Add(prefabs[0]);
         myArray.Add(list1);
-
-        List<GameObject> list2 = new List<GameObject>();
+		
+		List<GameObject> list2 = new List<GameObject>();
         list2.Add(prefabs[0]);
         list2.Add(prefabs[0]);
         list2.Add(prefabs[0]);
         list2.Add(prefabs[0]);
         list2.Add(prefabs[0]);
-        list2.Add(prefabs[0]);
-        list2.Add(prefabs[0]);
-        list2.Add(prefabs[0]);
-        list2.Add(prefabs[0]);
-        list2.Add(prefabs[0]);
-        list2.Add(prefabs[0]);
-        list2.Add(prefabs[0]);
+		list2.Add(prefabs[0]);
         myArray.Add(list2);
+
+        List<GameObject> list3 = new List<GameObject>();
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        list3.Add(prefabs[0]);
+        myArray.Add(list3);
 
         StartCoroutine(Example());
     }
