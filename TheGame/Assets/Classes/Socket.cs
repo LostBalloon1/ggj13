@@ -17,6 +17,14 @@ public class Socket : MonoBehaviour {
 
     void OnMouseDown()
     {
-        Instantiate(prefab, transform.position, Quaternion.identity);
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(prefab, transform.position, Quaternion.identity);
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            // Destroy what is in the socket
+        }
+        
     }
 }
