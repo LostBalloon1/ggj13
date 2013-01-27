@@ -26,6 +26,7 @@ ModelImporter:
     7400000: TakeDamage
     7400002: Death
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Line001
     13700002: Mob1_0
   materials:
@@ -35,7 +36,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -120,5 +121,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   additionalBone: 1
-  animationType: 2
+  animationType: 1
   userData: 
