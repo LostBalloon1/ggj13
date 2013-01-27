@@ -15,4 +15,5 @@ public class HeatFan : Fan {
 	
 	protected override void fanObjects (Collider other)	{
 	}
+
 }

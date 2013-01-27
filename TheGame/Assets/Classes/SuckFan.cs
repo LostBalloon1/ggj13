@@ -16,5 +16,4 @@ public class SuckFan : Fan {
 	void Update () {
 		base.Update();
 	}
-	
 }
