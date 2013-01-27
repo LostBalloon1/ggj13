@@ -107,7 +107,7 @@ public class Fan : MonoBehaviour {
 	protected bool ready;
 	
 	//constants 
-	protected const int force = 20;
+	protected const int force = 2;
 	protected const int powerAttack = 2;
 	protected const float updateInterval = 0.5F;
 	protected const float restInterval = 1.0F;
