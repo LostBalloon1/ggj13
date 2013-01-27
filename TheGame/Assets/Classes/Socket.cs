@@ -24,12 +24,12 @@ public class Socket : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && current == null)
         {
-            current = (GameObject)Instantiate(prefabs[1], transform.position, Quaternion.identity);
+            current = (GameObject)Instantiate(prefabs[1], transform.position, transform.rotation);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && current == null)
-        {
-            current = (GameObject)Instantiate(prefabs[2], transform.position, transform.rotation);
-        }
+        //else if (Input.GetKeyDown(KeyCode.Alpha3) && current == null)
+        //{
+        //    current = (GameObject)Instantiate(prefabs[2], transform.position, transform.rotation);
+        //}
         else if (Input.GetKeyDown(KeyCode.Alpha4) && current != null)
         {
             Destroy(current);
