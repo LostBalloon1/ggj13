@@ -25,6 +25,7 @@ public class Fan : MonoBehaviour {
 		{
 			ready = false;
 			deactivateFan();
+			
 			//Debug.Log("Fan Disabled" + lifeForce);
 		}
 		
@@ -51,6 +52,7 @@ public class Fan : MonoBehaviour {
 		
 			if(!activated){
 				activated = true;
+				activatedAnim();
 			}
 			attackEnemies(other.gameObject);
 			lastAttack = Time.realtimeSinceStartup;
@@ -62,6 +64,7 @@ public class Fan : MonoBehaviour {
 		if(other.rigidbody && ready){
 			if(!activated){
 				activated = true;
+				activatedAnim();
 			}
 			
 			fanObjects(other);
@@ -79,6 +82,7 @@ public class Fan : MonoBehaviour {
 	protected void deactivateFan(){
 		activated = false;			
 		lastRegen = Time.realtimeSinceStartup;
+		stopAnim();
 	}
 		
 	
@@ -91,12 +95,23 @@ public class Fan : MonoBehaviour {
 
 	}
 	
+	protected virtual void activatedAnim(){
+		animation.wrapMode = WrapMode.Loop;
+		animation.Play("Wind");
+	}
+	
+	protected virtual void stopAnim(){
+		target.animation.Stop("Wind");
+	}
+	
 	//force objects
 	protected virtual void fanObjects(Collider other){
    		other.rigidbody.AddForce(position * force);
 	}
 	
 	//variables
+	protected GameObject target;
+	protected Animation animation;
 	protected float lastAttack;
 	protected float lastRegen;
 	protected float now;
