@@ -13,6 +13,7 @@ public class Fan : MonoBehaviour {
 		position.x = gameObject.transform.up.x;
 		position.y = gameObject.transform.up.y;
 		position.z = 0;	
+		lifeBar = GameObject.Find("LifeBar");
 	}
 	
 	
@@ -39,10 +40,12 @@ public class Fan : MonoBehaviour {
 				//Debug.Log("Fan Enabled");
 			}
 			lastRegen = Time.realtimeSinceStartup;
+            changeLifeBar();
 		}
 		if(activated && now > lastAttack + updateInterval)
 		{
 	      	lifeForce--;
+            changeLifeBar();
 		}
 	}
 	
@@ -108,8 +111,30 @@ public class Fan : MonoBehaviour {
 	protected virtual void fanObjects(Collider other){
    		other.rigidbody.AddForce(position * force);
 	}
-	
+
+    protected void changeLifeBar()
+    {
+        Texture texture;
+		switch (lifeForce)
+        {
+            case 0: texture = Resources.Load("HUD_Bar_0", typeof(Texture)) as Texture; break;
+			case 1: texture = Resources.Load("HUD_Bar_3", typeof(Texture)) as Texture; break;
+			case 2: texture = Resources.Load("HUD_Bar_6", typeof(Texture)) as Texture; break;
+			case 3: texture = Resources.Load("HUD_Bar_9", typeof(Texture)) as Texture; break;
+			case 4: texture = Resources.Load("HUD_Bar_12", typeof(Texture)) as Texture; break;
+			case 5: texture = Resources.Load("HUD_Bar_15", typeof(Texture)) as Texture; break;
+			case 6: texture = Resources.Load("HUD_Bar_18", typeof(Texture)) as Texture; break;
+			case 7: texture = Resources.Load("HUD_Bar_21", typeof(Texture)) as Texture; break;
+			case 8: texture = Resources.Load("HUD_Bar_24", typeof(Texture)) as Texture; break;
+			case 9: texture = Resources.Load("HUD_Bar_27", typeof(Texture)) as Texture; break;
+			case 10: texture = Resources.Load("HUD_Bar_29", typeof(Texture)) as Texture; break;
+			default: texture = Resources.Load("HUD_Bar_29", typeof(Texture)) as Texture; break;
+        }
+		lifeBar.renderer.material.mainTexture = texture;
+    }
+
 	//variables
+	protected GameObject lifeBar;
 	protected GameObject target;
 	protected float lastAttack;
 	protected float lastRegen;
