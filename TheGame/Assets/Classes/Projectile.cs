@@ -4,6 +4,7 @@ using System.Collections;
 public class Projectile : MonoBehaviour {
 
     public static Projectile Instance; 
+	
     public
 
     void Awake()
@@ -27,12 +28,20 @@ public class Projectile : MonoBehaviour {
 
     IEnumerator ProjectileThrow()
     {
-
-        
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
     }
-
+	
+	// Add colliding object to the list, and start fan
+	protected void OnTriggerEnter(Collider other) {
+		Life damage = other.gameObject.GetComponent<Life>();
+		if(damage != null)
+		{
+			damage.takeDamage(powerAttack);
+			Destroy(this.gameObject);
+		}
+	}
+	private const int powerAttack = 5;
 }
     
 	
