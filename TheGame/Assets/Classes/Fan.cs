@@ -4,6 +4,22 @@ using System.Collections.Generic;
 
 public class Fan : MonoBehaviour {
 	
+	//variables
+	protected GameObject lifeBar;
+	protected GameObject target;
+	protected float lastAttack;
+	protected float lastRegen;
+	protected float now;
+	protected Vector3 position;
+	protected int lifeForce = 10;
+	protected bool activated;
+	protected bool ready;
+	
+	//constants 
+	protected const int force = 20;
+	protected const int powerAttack = 2;
+	protected const float updateInterval = 0.5F;
+	protected const float restInterval = 1.0F;
 	
 	
 	// Use this for initialization
@@ -13,7 +29,7 @@ public class Fan : MonoBehaviour {
 		position.x = gameObject.transform.up.x;
 		position.y = gameObject.transform.up.y;
 		position.z = 0;	
-		lifeBar = GameObject.Find("LifeBar");
+		lifeBar = transform.FindChild("LifeBar").gameObject;
 	}
 	
 	
@@ -33,14 +49,14 @@ public class Fan : MonoBehaviour {
 		// if fan is empty and regenerating
 		if(!activated && now > lastRegen + restInterval)
 		{
-			lifeForce++;
+			lifeForce++;	
+            changeLifeBar();
 			if(lifeForce >= 10){
 				ready = true;
 				activated = false;
 				//Debug.Log("Fan Enabled");
 			}
 			lastRegen = Time.realtimeSinceStartup;
-            changeLifeBar();
 		}
 		if(activated && now > lastAttack + updateInterval)
 		{
@@ -114,8 +130,9 @@ public class Fan : MonoBehaviour {
 
     protected void changeLifeBar()
     {
-        Texture texture;
-		switch (lifeForce)
+        Texture texture = null;
+		int life = lifeForce;
+		switch(life)
         {
             case 0: texture = Resources.Load("HUD_Bar_0", typeof(Texture)) as Texture; break;
 			case 1: texture = Resources.Load("HUD_Bar_3", typeof(Texture)) as Texture; break;
@@ -130,23 +147,9 @@ public class Fan : MonoBehaviour {
 			case 10: texture = Resources.Load("HUD_Bar_29", typeof(Texture)) as Texture; break;
 			default: texture = Resources.Load("HUD_Bar_29", typeof(Texture)) as Texture; break;
         }
-		lifeBar.renderer.material.mainTexture = texture;
+		if(texture != null && lifeBar != null){
+			lifeBar.renderer.material.mainTexture = texture;
+		}
     }
 
-	//variables
-	protected GameObject lifeBar;
-	protected GameObject target;
-	protected float lastAttack;
-	protected float lastRegen;
-	protected float now;
-	protected Vector3 position;
-	protected int lifeForce = 10;
-	protected bool activated;
-	protected bool ready;
-	
-	//constants 
-	protected const int force = 20;
-	protected const int powerAttack = 2;
-	protected const float updateInterval = 0.5F;
-	protected const float restInterval = 1.0F;
 }
