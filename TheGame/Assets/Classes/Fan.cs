@@ -101,7 +101,7 @@ public class Fan : MonoBehaviour {
 	}
 	
 	protected virtual void stopAnim(){
-		target.animation.Stop("Wind");
+		animation.Stop("Wind");
 	}
 	
 	//force objects
@@ -111,7 +111,6 @@ public class Fan : MonoBehaviour {
 	
 	//variables
 	protected GameObject target;
-	protected Animation animation;
 	protected float lastAttack;
 	protected float lastRegen;
 	protected float now;
@@ -121,7 +120,7 @@ public class Fan : MonoBehaviour {
 	protected bool ready;
 	
 	//constants 
-	protected const int force = 2;
+	protected const int force = 20;
 	protected const int powerAttack = 2;
 	protected const float updateInterval = 0.5F;
 	protected const float restInterval = 1.0F;
