@@ -16,4 +16,13 @@ public class SuckFan : Fan {
 	void Update () {
 		base.Update();
 	}
+
+    protected override void attackEnemies(GameObject enemy)
+    {
+        Life damage = enemy.GetComponent<Life>();
+        if (damage != null)
+        {
+            Destroy(enemy);
+        }
+    }
 }
